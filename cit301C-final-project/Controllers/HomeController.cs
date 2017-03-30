@@ -13,16 +13,16 @@ namespace cit301C_final_project.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Search()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Search for a specific pet.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Add()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Add a new pet identification chip.";
 
             return View();
         }
