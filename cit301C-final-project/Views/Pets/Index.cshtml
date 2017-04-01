@@ -1,0 +1,102 @@
+﻿@model IEnumerable<cit301C_final_project.Models.Pet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+    <p>
+        Title: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Breed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerPhoneNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerPhoneNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
